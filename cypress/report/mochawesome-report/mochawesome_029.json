@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-05-13T12:26:28.096Z",
+    "end": "2022-05-13T12:26:33.593Z",
+    "duration": 5497,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "20a4ca85-d059-43e3-aad6-50569890daa5",
+      "title": "",
+      "fullFile": "cypress/integration/2-advanced-examples/location.spec.js",
+      "file": "cypress/integration/2-advanced-examples/location.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f3b5ad67-4147-4203-b3b6-533a71ebe550",
+          "title": "Location",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "cy.hash() - get the current URL hash",
+              "fullTitle": "Location cy.hash() - get the current URL hash",
+              "timedOut": null,
+              "duration": 2948,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/hash\ncy.hash().should('be.empty');",
+              "err": {},
+              "uuid": "e03030fa-43ae-4066-b557-d9c7a673c5d7",
+              "parentUUID": "f3b5ad67-4147-4203-b3b6-533a71ebe550",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.location() - get window.location",
+              "fullTitle": "Location cy.location() - get window.location",
+              "timedOut": null,
+              "duration": 401,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/location\ncy.location().should(location => {\n  expect(location.hash).to.be.empty;\n  expect(location.href).to.eq('https://example.cypress.io/commands/location');\n  expect(location.host).to.eq('example.cypress.io');\n  expect(location.hostname).to.eq('example.cypress.io');\n  expect(location.origin).to.eq('https://example.cypress.io');\n  expect(location.pathname).to.eq('/commands/location');\n  expect(location.port).to.eq('');\n  expect(location.protocol).to.eq('https:');\n  expect(location.search).to.be.empty;\n});",
+              "err": {},
+              "uuid": "1cb49559-88cd-4216-9f4a-6649ba1ac93b",
+              "parentUUID": "f3b5ad67-4147-4203-b3b6-533a71ebe550",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.url() - get the current URL",
+              "fullTitle": "Location cy.url() - get the current URL",
+              "timedOut": null,
+              "duration": 291,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/url\ncy.url().should('eq', 'https://example.cypress.io/commands/location');",
+              "err": {},
+              "uuid": "51289981-b2d4-42e6-b91d-29abbbc8a634",
+              "parentUUID": "f3b5ad67-4147-4203-b3b6-533a71ebe550",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e03030fa-43ae-4066-b557-d9c7a673c5d7",
+            "1cb49559-88cd-4216-9f4a-6649ba1ac93b",
+            "51289981-b2d4-42e6-b91d-29abbbc8a634"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3640,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/report/mochawesome-report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

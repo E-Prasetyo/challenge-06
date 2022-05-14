@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-05-13T12:23:04.015Z",
+    "end": "2022-05-13T12:23:14.911Z",
+    "duration": 10896,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c3f4b877-a848-4d94-988c-46eb2a032807",
+      "title": "",
+      "fullFile": "cypress/integration/2-advanced-examples/aliasing.spec.js",
+      "file": "cypress/integration/2-advanced-examples/aliasing.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5889964b-728d-4cc3-a86c-c3c6ea349ff0",
+          "title": "Aliasing",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": ".as() - alias a DOM element for later use",
+              "fullTitle": "Aliasing .as() - alias a DOM element for later use",
+              "timedOut": null,
+              "duration": 6807,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/as\n// Alias a DOM element for use later\n// We don't have to traverse to the element\n// later in our code, we reference it with @\ncy.get('.as-table').find('tbody>tr').first().find('td').first().find('button').as('firstBtn'); // when we reference the alias, we place an\n// @ in front of its name\ncy.get('@firstBtn').click();\ncy.get('@firstBtn').should('have.class', 'btn-success').and('contain', 'Changed');",
+              "err": {},
+              "uuid": "23961a20-5e6f-471a-a187-1aaa5144ae51",
+              "parentUUID": "5889964b-728d-4cc3-a86c-c3c6ea349ff0",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": ".as() - alias a route for later use",
+              "fullTitle": "Aliasing .as() - alias a route for later use",
+              "timedOut": null,
+              "duration": 2258,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Alias the route to wait for its response\ncy.intercept('GET', '**/comments/*').as('getComment'); // we have code that gets a comment when\n// the button is clicked in scripts.js\ncy.get('.network-btn').click(); // https://on.cypress.io/wait\ncy.wait('@getComment').its('response.statusCode').should('eq', 200);",
+              "err": {},
+              "uuid": "51f5e998-d402-491a-a438-2bc58c8eb400",
+              "parentUUID": "5889964b-728d-4cc3-a86c-c3c6ea349ff0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "23961a20-5e6f-471a-a187-1aaa5144ae51",
+            "51f5e998-d402-491a-a438-2bc58c8eb400"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9065,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/report/mochawesome-report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

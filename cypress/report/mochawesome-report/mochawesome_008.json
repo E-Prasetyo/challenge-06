@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-05-13T08:51:42.824Z",
+    "end": "2022-05-13T08:51:48.160Z",
+    "duration": 5336,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "c11143d5-4633-4a95-822f-b73b5230bd96",
+      "title": "",
+      "fullFile": "cypress/integration/2-advanced-examples/local_storage.spec.js",
+      "file": "cypress/integration/2-advanced-examples/local_storage.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "f2df098e-0fe9-4acf-a146-68e649312721",
+          "title": "Local Storage",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "cy.clearLocalStorage() - clear all data in local storage",
+              "fullTitle": "Local Storage cy.clearLocalStorage() - clear all data in local storage",
+              "timedOut": null,
+              "duration": 3469,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/clearlocalstorage\ncy.get('.ls-btn').click().should(() => {\n  expect(localStorage.getItem('prop1')).to.eq('red');\n  expect(localStorage.getItem('prop2')).to.eq('blue');\n  expect(localStorage.getItem('prop3')).to.eq('magenta');\n}); // clearLocalStorage() yields the localStorage object\ncy.clearLocalStorage().should(ls => {\n  expect(ls.getItem('prop1')).to.be.null;\n  expect(ls.getItem('prop2')).to.be.null;\n  expect(ls.getItem('prop3')).to.be.null;\n});\ncy.get('.ls-btn').click().should(() => {\n  expect(localStorage.getItem('prop1')).to.eq('red');\n  expect(localStorage.getItem('prop2')).to.eq('blue');\n  expect(localStorage.getItem('prop3')).to.eq('magenta');\n}); // Clear key matching string in Local Storage\ncy.clearLocalStorage('prop1').should(ls => {\n  expect(ls.getItem('prop1')).to.be.null;\n  expect(ls.getItem('prop2')).to.eq('blue');\n  expect(ls.getItem('prop3')).to.eq('magenta');\n});\ncy.get('.ls-btn').click().should(() => {\n  expect(localStorage.getItem('prop1')).to.eq('red');\n  expect(localStorage.getItem('prop2')).to.eq('blue');\n  expect(localStorage.getItem('prop3')).to.eq('magenta');\n}); // Clear keys matching regex in Local Storage\ncy.clearLocalStorage(/prop1|2/).should(ls => {\n  expect(ls.getItem('prop1')).to.be.null;\n  expect(ls.getItem('prop2')).to.be.null;\n  expect(ls.getItem('prop3')).to.eq('magenta');\n});",
+              "err": {},
+              "uuid": "3f60fa8e-c31d-4e8a-bba5-d44393f9c3f8",
+              "parentUUID": "f2df098e-0fe9-4acf-a146-68e649312721",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3f60fa8e-c31d-4e8a-bba5-d44393f9c3f8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3469,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/report/mochawesome-report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

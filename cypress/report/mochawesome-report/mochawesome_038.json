@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-05-13T12:30:15.746Z",
+    "end": "2022-05-13T12:30:32.362Z",
+    "duration": 16616,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a2a3ddb6-f157-4d0f-bd28-64bdd3c30384",
+      "title": "",
+      "fullFile": "cypress/integration/2-advanced-examples/waiting.spec.js",
+      "file": "cypress/integration/2-advanced-examples/waiting.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "340fed66-58bb-47b3-a561-6b29bc491d76",
+          "title": "Waiting",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "cy.wait() - wait for a specific amount of time",
+              "fullTitle": "Waiting cy.wait() - wait for a specific amount of time",
+              "timedOut": null,
+              "duration": 9669,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('.wait-input1').type('Wait 1000ms after typing');\ncy.wait(1000);\ncy.get('.wait-input2').type('Wait 1000ms after typing');\ncy.wait(1000);\ncy.get('.wait-input3').type('Wait 1000ms after typing');\ncy.wait(1000);",
+              "err": {},
+              "uuid": "8499f59c-dc48-4ccc-b140-111d9a044e81",
+              "parentUUID": "340fed66-58bb-47b3-a561-6b29bc491d76",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "cy.wait() - wait for a specific route",
+              "fullTitle": "Waiting cy.wait() - wait for a specific route",
+              "timedOut": null,
+              "duration": 4524,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Listen to GET to comments/1\ncy.intercept('GET', '**/comments/*').as('getComment'); // we have code that gets a comment when\n// the button is clicked in scripts.js\ncy.get('.network-btn').click(); // wait for GET comments/1\ncy.wait('@getComment').its('response.statusCode').should('be.oneOf', [200, 304]);",
+              "err": {},
+              "uuid": "9c652df8-7c1f-44ed-b03e-3ca4a93a42b8",
+              "parentUUID": "340fed66-58bb-47b3-a561-6b29bc491d76",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8499f59c-dc48-4ccc-b140-111d9a044e81",
+            "9c652df8-7c1f-44ed-b03e-3ca4a93a42b8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14193,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/report/mochawesome-report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

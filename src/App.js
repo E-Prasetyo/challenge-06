@@ -1,24 +1,34 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { 
+  HomeUser, Login, Register, HomeAdmin, NotFound
+} from './Pages'
+import AuthRoute from './Auth/AuthRoute';
+import { SidebarAdmin } from './Components';
 import './App.css';
 
 function App() {
+  const auth = useSelector((state) => state.auth?.role)
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/login' element={<Login />} />
+      <Route path='/register' element={<Register />} />
+      <Route path='/' element={
+        <AuthRoute>
+          {
+           auth === 'admin' ? 
+            <SidebarAdmin>
+              <HomeAdmin/>
+            </SidebarAdmin>
+            :<HomeUser/>
+           }
+        </AuthRoute>
+      }/>
+      <Route path='*' element={<NotFound />} />
+    </Routes>
   );
 }
 
